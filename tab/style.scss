@@ -1,0 +1,15 @@
+
+[role="tab"] {
+    color: #111;
+    &[aria-selected="true"] {
+        color: red;
+    }
+}
+ 
+
+[role="tabpanel"] {
+    display: none;
+    &[aria-hidden="false"] {
+        display: block;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>練習しましょうね</title>
+    <meta name="description" content="">
+        <meta name="keywords" content=""/>
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script>
+<script type="text/javascript" src=""></script>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+</head>
+<body>
+    <ul role="tablist">
+        <li id="tabList01" aria-controls="tab01" aria-selected="true" role="tab">タブ01</li>
+        <li id="tabList02" aria-controls="tab02" aria-selected="false" role="tab">タブ02</li>
+        <li id="tabList03" aria-controls="tab03" aria-selected="false" role="tab">タブ03</li>
+    </ul>
+    <section id="tab01" aria-hidden="false" aria-labelledby="tabList01" role="tabpanel">
+    コンテンツ01
+    </section>
+    <section id="tab02" aria-hidden="true" aria-labelledby="tabList02" role="tabpanel">
+    コンテンツ02
+    </section>
+    <section id="tab03" aria-hidden="true" aria-labelledby="tabList03" role="tabpanel">
+    コンテンツ03
+    </section>
+    
+    
+<script type="text/javascript">
+   var tab = $('[role="tab"]'),
+        tabpanel = $('[role="tabpanel"]');
+
+    tab.stop().on('click', function() {
+        var _self = $(this),
+            select = _self.attr('aria-selected'),
+            id = _self.attr('aria-controls'),
+            id_body = $('#' + id);
+
+        if (select === 'true') {
+            return false;
+        }
+
+        tabpanel.attr('aria-hidden', true);
+        id_body.attr('aria-hidden', false);
+
+        tab.attr('aria-selected', false);
+        _self.attr('aria-selected', true);
+    });
+</script>	
+
+</body>
+</html>
+
+
