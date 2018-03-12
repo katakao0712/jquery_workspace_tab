@@ -1,0 +1,11 @@
+[role="tab"] {
+  color: #111; }
+  [role="tab"][aria-selected="true"] {
+    color: red; }
+
+[role="tabpanel"] {
+  display: none; }
+  [role="tabpanel"][aria-hidden="false"] {
+    display: block; }
+
+/*# sourceMappingURL=style.css.map */
